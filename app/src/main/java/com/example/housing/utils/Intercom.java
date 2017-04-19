@@ -6,22 +6,16 @@ package com.example.housing.utils;
 
 public class Intercom
 {
-    String flat_no;
     String name;
     String intercom_no;
 
     // required public default constructor
-    Intercom(){}
+    public Intercom(){}
 
-    Intercom(String name,String flat_no,String intercom_no)
+    public Intercom(String name, String intercom_no)
     {
         this.name = name;
-        this.flat_no = flat_no;
         this.intercom_no = intercom_no;
-    }
-
-    public String getFlat_no() {
-        return this.flat_no;
     }
 
     public String getName() {
@@ -34,10 +28,6 @@ public class Intercom
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setFlat_no(String flat_no) {
-        this.flat_no = flat_no;
     }
 
     public void setIntercom_no(String intercom_no) {

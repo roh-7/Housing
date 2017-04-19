@@ -13,7 +13,7 @@ public class Members
     // required public default constructor
     Members(){}
 
-    Members(String name, String flat_no,String intercom_no)
+    public Members(String name, String flat_no, String intercom_no)
     {
         this.name = name;
         this.flat_no = flat_no;

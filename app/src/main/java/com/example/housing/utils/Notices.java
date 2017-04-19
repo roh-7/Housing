@@ -8,14 +8,16 @@ public class Notices
 {
     String title;
     String subtitle;
+    String timestamp;
 
     // required public default constructor
-    Notices(){}
+    public Notices(){}
 
-    Notices(String title,String subtitle)
+    public Notices(String title, String subtitle,String timestamp)
     {
         this.title = title;
         this.subtitle = subtitle;
+        this.timestamp = timestamp;
     }
 
     public String getSubtitle() {
@@ -24,6 +26,14 @@ public class Notices
 
     public String getTitle() {
         return this.title;
+    }
+
+    public String getTimestamp() {
+        return this.timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
     public void setSubtitle(String subtitle) {

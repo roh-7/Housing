@@ -13,7 +13,7 @@ public class Committee
     // required public default constructor
     public Committee(){}
 
-    Committee(String name,String position,String flat_no)
+    public Committee(String name, String position, String flat_no)
     {
         this.name = name;
         this.position = position;

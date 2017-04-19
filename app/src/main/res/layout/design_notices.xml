@@ -66,7 +66,7 @@
                 android:src="@mipmap/calendar_1" />
 
             <TextView
-                android:id="@+id/book_design_age"
+                android:id="@+id/notice_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/faint_line"
