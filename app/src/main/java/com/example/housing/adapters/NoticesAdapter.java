@@ -13,6 +13,8 @@ import com.example.housing.utils.Notices;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.housing.R.id.notices_card;
+
 /**
  * Created by rohitramaswamy on 19/04/17.
  */
@@ -24,6 +26,22 @@ public class NoticesAdapter extends RecyclerView.Adapter<NoticesAdapter.NoticesV
     public NoticesAdapter(List<Notices> NoticeList)
     {
         this.NoticesList = NoticeList;
+    }
+
+    public static class NoticesViewHolder extends RecyclerView.ViewHolder
+    {
+        CardView cardView;
+        TextView noticesTitle;
+        TextView noticesSubtitle;
+        TextView noticesTime;
+
+        NoticesViewHolder(View itemView) {
+            super(itemView);
+            cardView = (CardView) itemView.findViewById(notices_card);
+            noticesTitle = (TextView) itemView.findViewById(R.id.notice_title);
+            noticesSubtitle = (TextView) itemView.findViewById(R.id.notice_subtitle);
+            noticesTime = (TextView) itemView.findViewById(R.id.notice_time);
+        }
     }
 
     @Override
@@ -48,19 +66,9 @@ public class NoticesAdapter extends RecyclerView.Adapter<NoticesAdapter.NoticesV
             return (int) NoticesList.size();
     }
 
-    public static class NoticesViewHolder extends RecyclerView.ViewHolder
-    {
-        CardView cardView;
-        TextView noticesTitle;
-        TextView noticesSubtitle;
-        TextView noticesTime;
-
-        NoticesViewHolder(View itemView) {
-            super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.notices_card);
-            noticesTitle = (TextView) itemView.findViewById(R.id.notice_title);
-            noticesSubtitle = (TextView) itemView.findViewById(R.id.notice_subtitle);
-            noticesTime = (TextView) itemView.findViewById(R.id.notice_time);
-        }
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
+
+
 }

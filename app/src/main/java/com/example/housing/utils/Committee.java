@@ -21,15 +21,15 @@ public class Committee
     }
 
     public String getFlat_no() {
-        return this.flat_no;
+        return flat_no;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getPosition() {
-        return this.position;
+        return position;
     }
 
     public void setFlat_no(String flat_no) {
@@ -44,4 +44,3 @@ public class Committee
         this.position = position;
     }
 }
-

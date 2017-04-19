@@ -3,6 +3,7 @@ package com.example.housing.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +22,7 @@ import java.util.List;
 
 public class NoticesFragment extends Fragment
 {
-    private static final String LOG_TAG = "NoticesFragment";
-
-    List<Notices> NoticesList = new ArrayList<Notices>();
+    private List<Notices> NoticesList = new ArrayList<Notices>();
     RecyclerView recyclerView;
 
     @Nullable
@@ -36,9 +35,8 @@ public class NoticesFragment extends Fragment
                 "in the morning","17th April 2017"));
         NoticesList.add(new Notices("Elections coming up","The elections for the new committe will be held in " +
                 "the clubhouse tomorrow at 3pm","13th April 2017"));
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new NoticesAdapter(NoticesList));
-
         return view;
     }
 }

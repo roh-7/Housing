@@ -3,6 +3,7 @@ package com.example.housing.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,7 @@ public class IntercomFragment extends Fragment
         IntercomShortcuts.add(new Intercom("Gym","103"));
         IntercomShortcuts.add(new Intercom("Canteen","104"));
         IntercomShortcuts.add(new Intercom("Banquet","105"));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new IntercomAdapter(IntercomShortcuts));
 
 

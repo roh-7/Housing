@@ -13,6 +13,8 @@ import com.example.housing.utils.Intercom;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.housing.R.id.intercom_card;
+
 /**
  * Created by rohitramaswamy on 19/04/17.
  */
@@ -21,7 +23,21 @@ public class IntercomAdapter extends RecyclerView.Adapter<IntercomAdapter.Interc
         {
         List<Intercom> IntercomList=new ArrayList<Intercom>();
 
-public IntercomAdapter(List<Intercom> IntercomList)
+
+            public static class IntercomViewHolder extends RecyclerView.ViewHolder {
+                CardView cardView;
+                TextView intercomTitle;
+                TextView intercomNumber;
+
+                IntercomViewHolder(View itemView) {
+                    super(itemView);
+                    cardView = (CardView) itemView.findViewById(intercom_card);
+                    intercomNumber = (TextView) itemView.findViewById(R.id.intercom_number);
+                    intercomTitle = (TextView) itemView.findViewById(R.id.intercom_title);
+                }
+            }
+
+            public IntercomAdapter(List<Intercom> IntercomList)
         {
         this.IntercomList=IntercomList;
         }
@@ -47,17 +63,8 @@ public int getItemCount(){
         return(int)IntercomList.size();
         }
 
-public static class IntercomViewHolder extends RecyclerView.ViewHolder {
-    CardView cardView;
-    TextView intercomTitle;
-    TextView intercomNumber;
-
-    IntercomViewHolder(View itemView) {
-        super(itemView);
-        cardView = (CardView) itemView.findViewById(R.id.intercom_card);
-        intercomNumber = (TextView) itemView.findViewById(R.id.intercom_number);
-        intercomTitle = (TextView) itemView.findViewById(R.id.intercom_title);
-    }
-}
+            public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+                super.onAttachedToRecyclerView(recyclerView);
+            }
 
 }

@@ -13,6 +13,8 @@ import com.example.housing.utils.Members;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.housing.R.id.member_card;
+
 /**
  * Created by rohitramaswamy on 19/04/17.
  */
@@ -24,6 +26,23 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersV
     public MembersAdapter(List<Members> Members)
     {
         this.Members = Members;
+    }
+
+
+    public static class MembersViewHolder extends RecyclerView.ViewHolder
+    {
+        CardView cardView;
+        TextView memberName;
+        TextView memberFlat;
+        TextView memberIntercom;
+
+        MembersViewHolder(View itemView) {
+            super(itemView);
+            cardView = (CardView) itemView.findViewById(member_card);
+            memberFlat = (TextView) itemView.findViewById(R.id.member_flat_number);
+            memberName = (TextView) itemView.findViewById(R.id.member_name);
+            memberIntercom = (TextView) itemView.findViewById(R.id.member_intercom_number);
+        }
     }
 
     @Override
@@ -48,19 +67,8 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersV
             return (int) Members.size();
     }
 
-    public static class MembersViewHolder extends RecyclerView.ViewHolder
-    {
-        CardView cardView;
-        TextView memberName;
-        TextView memberFlat;
-        TextView memberIntercom;
-
-        MembersViewHolder(View itemView) {
-            super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.member_card);
-            memberFlat = (TextView) itemView.findViewById(R.id.member_flat_number);
-            memberName = (TextView) itemView.findViewById(R.id.member_name);
-            memberIntercom = (TextView) itemView.findViewById(R.id.member_intercom_number);
-        }
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
+
 }

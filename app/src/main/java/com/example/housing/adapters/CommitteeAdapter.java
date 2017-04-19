@@ -28,6 +28,22 @@ public class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.Comm
         this.CommitteeMembers = CommitteeMembers;
     }
 
+    public static class CommitteeViewHolder extends RecyclerView.ViewHolder
+    {
+        CardView cardView;
+        TextView committeeName;
+        TextView committeePosition;
+        TextView committeeFlatNo;
+
+        CommitteeViewHolder(View itemView) {
+            super(itemView);
+            cardView = (CardView) itemView.findViewById(commitee_card);
+            committeeName = (TextView) itemView.findViewById(R.id.committee_name);
+            committeePosition = (TextView) itemView.findViewById(R.id.committee_position);
+            committeeFlatNo = (TextView) itemView.findViewById(R.id.commitee_flat_no);
+        }
+    }
+
     @Override
     public CommitteeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_committee, parent, false);
@@ -50,19 +66,9 @@ public class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.Comm
             return (int) CommitteeMembers.size();
     }
 
-    public static class CommitteeViewHolder extends RecyclerView.ViewHolder
-    {
-        CardView cardView;
-        TextView committeeName;
-        TextView committeePosition;
-        TextView committeeFlatNo;
-
-        CommitteeViewHolder(View itemView) {
-            super(itemView);
-            cardView = (CardView) itemView.findViewById(commitee_card);
-            committeeName = (TextView) itemView.findViewById(R.id.committee_name);
-            committeePosition = (TextView) itemView.findViewById(R.id.committee_position);
-            committeeFlatNo = (TextView) itemView.findViewById(R.id.commitee_flat_no);
-        }
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
+
+
 }

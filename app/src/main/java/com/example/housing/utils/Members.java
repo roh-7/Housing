@@ -33,14 +33,14 @@ public class Members
     }
 
     public String getIntercom_no() {
-        return this.intercom_no;
+        return intercom_no;
     }
 
     public String getFlat_no() {
-        return this.flat_no;
+        return flat_no;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 }

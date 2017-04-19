@@ -21,15 +21,15 @@ public class Notices
     }
 
     public String getSubtitle() {
-        return this.subtitle;
+        return subtitle;
     }
 
     public String getTitle() {
-        return this.title;
+        return title;
     }
 
     public String getTimestamp() {
-        return this.timestamp;
+        return timestamp;
     }
 
     public void setTimestamp(String timestamp) {

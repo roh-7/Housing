@@ -19,11 +19,11 @@ public class Intercom
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getIntercom_no() {
-        return this.intercom_no;
+        return intercom_no;
     }
 
     public void setName(String name) {

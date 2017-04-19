@@ -3,6 +3,7 @@ package com.example.housing.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +46,7 @@ public class MembersFragment extends Fragment
         MembersList.add(new Members("Mr. Kulkarni","A-401","10401"));
         MembersList.add(new Members("Mr. Nair","A-404","10404"));
         MembersList.add(new Members("Mr. Ramaswamy","A-403","10403"));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new MembersAdapter(MembersList));
         return view;
     }
