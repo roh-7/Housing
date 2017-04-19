@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.housing.R;
+import com.example.housing.adapters.NoticesAdapter;
 import com.example.housing.utils.Notices;
 
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public class NoticesFragment extends Fragment
                 "in the morning","17th April 2017"));
         NoticesList.add(new Notices("Elections coming up","The elections for the new committe will be held in " +
                 "the clubhouse tomorrow at 3pm","13th April 2017"));
+
+        recyclerView.setAdapter(new NoticesAdapter(NoticesList));
+
         return view;
     }
 }

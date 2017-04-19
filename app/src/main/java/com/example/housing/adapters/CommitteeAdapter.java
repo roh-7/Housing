@@ -60,7 +60,7 @@ public class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.Comm
         CommitteeViewHolder(View itemView) {
             super(itemView);
             cardView = (CardView) itemView.findViewById(commitee_card);
-            committeeName = (TextView) itemView.findViewById(R.id.commitee_name);
+            committeeName = (TextView) itemView.findViewById(R.id.committee_name);
             committeePosition = (TextView) itemView.findViewById(R.id.committee_position);
             committeeFlatNo = (TextView) itemView.findViewById(R.id.commitee_flat_no);
         }

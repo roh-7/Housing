@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.housing.R;
+import com.example.housing.adapters.IntercomAdapter;
 import com.example.housing.utils.Intercom;
 
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class IntercomFragment extends Fragment
         IntercomShortcuts.add(new Intercom("Gym","103"));
         IntercomShortcuts.add(new Intercom("Canteen","104"));
         IntercomShortcuts.add(new Intercom("Banquet","105"));
+        recyclerView.setAdapter(new IntercomAdapter(IntercomShortcuts));
 
 
         return view;

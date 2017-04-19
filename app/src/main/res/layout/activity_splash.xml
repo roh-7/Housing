@@ -9,10 +9,17 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:id="@+id/splash_image"
         android:scaleType="fitCenter"
-        android:padding="10dp"
         android:src="@drawable/splash"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HOUSING APP"
+        android:layout_below="@id/splash_image"
+        android:textSize="15sp" />
 
 </RelativeLayout>

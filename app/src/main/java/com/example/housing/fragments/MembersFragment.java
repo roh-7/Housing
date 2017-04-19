@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.housing.R;
+import com.example.housing.adapters.MembersAdapter;
 import com.example.housing.utils.Members;
 
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ public class MembersFragment extends Fragment
         MembersList.add(new Members("Mr. Kulkarni","A-401","10401"));
         MembersList.add(new Members("Mr. Nair","A-404","10404"));
         MembersList.add(new Members("Mr. Ramaswamy","A-403","10403"));
+        recyclerView.setAdapter(new MembersAdapter(MembersList));
         return view;
     }
 }
