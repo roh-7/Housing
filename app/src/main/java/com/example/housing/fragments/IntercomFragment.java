@@ -20,6 +20,8 @@ import java.util.List;
 
 public class IntercomFragment extends Fragment
 {
+    private static final String LOG_TAG = "IntercomFragment";
+
     private List<Intercom> IntercomShortcuts = new ArrayList<Intercom>();
     RecyclerView recyclerView;
 
@@ -39,6 +41,7 @@ public class IntercomFragment extends Fragment
         IntercomShortcuts.add(new Intercom("Gym","103"));
         IntercomShortcuts.add(new Intercom("Canteen","104"));
         IntercomShortcuts.add(new Intercom("Banquet","105"));
+
 
         return view;
     }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.housing.R;
+import com.example.housing.adapters.CommitteeAdapter;
 import com.example.housing.utils.Committee;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class CommitteeFragment extends Fragment {
 
     private List<Committee> CommitteeMembers = new ArrayList<Committee>();
     RecyclerView recyclerView;
-
+    private static final String LOG_TAG = "CommitteFragment";
 
     @Nullable
     @Override
@@ -33,6 +34,7 @@ public class CommitteeFragment extends Fragment {
         CommitteeMembers.add(new Committee("Rohit Ramaswamy","Secretary","A-101"));
         CommitteeMembers.add(new Committee("Aditya Nair","Treasurer","D-504"));
         CommitteeMembers.add(new Committee("Aditya Kulkarni","Member","C-803"));
+        recyclerView.setAdapter(new CommitteeAdapter(CommitteeMembers));
         return view;
     }
 }

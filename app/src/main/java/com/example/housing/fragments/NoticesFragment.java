@@ -20,6 +20,8 @@ import java.util.List;
 
 public class NoticesFragment extends Fragment
 {
+    private static final String LOG_TAG = "NoticesFragment";
+
     List<Notices> NoticesList = new ArrayList<Notices>();
     RecyclerView recyclerView;
 

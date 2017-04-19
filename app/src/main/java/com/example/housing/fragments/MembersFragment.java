@@ -20,6 +20,7 @@ import java.util.List;
 
 public class MembersFragment extends Fragment
 {
+    private static final String LOG_TAG = "MembersFragment";
 
     List<Members> MembersList = new ArrayList<Members>();
     RecyclerView recyclerView;

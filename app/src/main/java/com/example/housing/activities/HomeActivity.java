@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,6 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.housing.R;
+import com.example.housing.fragments.CommitteeFragment;
+import com.example.housing.fragments.IntercomFragment;
+import com.example.housing.fragments.MembersFragment;
+import com.example.housing.fragments.NoticesFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -82,18 +87,29 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if(id==R.id.members)
+        {
+            MembersFragment membersFragment = new MembersFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, membersFragment, membersFragment.getTag()).commit();
+        }
+        else if (id==R.id.notices)
+        {
+            NoticesFragment noticesFragment = new NoticesFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,noticesFragment,noticesFragment.getTag()).commit();
+        }
+        else if (id==R.id.commitee)
+        {
+            CommitteeFragment committeeFragment = new CommitteeFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,committeeFragment,committeeFragment.getTag()).commit();
+        }
+        else if(id==R.id.intercom)
+        {
+            IntercomFragment intercomFragment = new IntercomFragment();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container,intercomFragment,intercomFragment.getTag()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
