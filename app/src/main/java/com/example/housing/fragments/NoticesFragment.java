@@ -13,13 +13,13 @@ import com.example.housing.R;
  * Created by rohitramaswamy on 19/04/17.
  */
 
-public class IntercomFragment extends Fragment
+public class NoticesFragment extends Fragment
 {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_intercom,container,false);
+        View view = inflater.inflate(R.layout.fragment_notices,container,false);
         return view;
     }
 }
