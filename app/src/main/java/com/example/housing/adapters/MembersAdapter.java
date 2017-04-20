@@ -21,54 +21,54 @@ import static com.example.housing.R.id.member_card;
 
 public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.MembersViewHolder>
 {
-    List<Members> Members = new ArrayList<Members>();
+    List<Members> MembersMembers = new ArrayList<Members>();
 
-    public MembersAdapter(List<Members> Members)
+    public MembersAdapter(List<Members> MembersMembers)
     {
-        this.Members = Members;
+        this.MembersMembers = MembersMembers;
     }
-
 
     public static class MembersViewHolder extends RecyclerView.ViewHolder
     {
         CardView cardView;
-        TextView memberName;
-        TextView memberFlat;
-        TextView memberIntercom;
+        TextView MembersName;
+        TextView MembersIntercom;
+        TextView MembersFlatNo;
 
         MembersViewHolder(View itemView) {
             super(itemView);
             cardView = (CardView) itemView.findViewById(member_card);
-            memberFlat = (TextView) itemView.findViewById(R.id.member_flat_number);
-            memberName = (TextView) itemView.findViewById(R.id.member_name);
-            memberIntercom = (TextView) itemView.findViewById(R.id.member_intercom_number);
+            MembersName = (TextView) itemView.findViewById(R.id.member_name);
+            MembersIntercom = (TextView) itemView.findViewById(R.id.member_intercom_number);
+            MembersFlatNo = (TextView) itemView.findViewById(R.id.member_flat_number);
         }
     }
 
     @Override
     public MembersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_committee, parent, false);
-        MembersViewHolder membersViewHolder = new MembersViewHolder(v);
-        return membersViewHolder;
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_members, parent, false);
+        MembersViewHolder MembersViewHolder = new MembersViewHolder(v);
+        return MembersViewHolder;
     }
 
     @Override
     public void onBindViewHolder(MembersViewHolder holder, int position) {
-        holder.memberIntercom.setText(Members.get(position).getIntercom_no());
-        holder.memberFlat.setText(Members.get(position).getFlat_no());
-        holder.memberName.setText(Members.get(position).getName());
+        holder.MembersName.setText(MembersMembers.get(position).getName());
+        holder.MembersIntercom.setText(MembersMembers.get(position).getIntercom_no());
+        holder.MembersFlatNo.setText(MembersMembers.get(position).getFlat_no());
     }
 
     @Override
     public int getItemCount() {
-        if(Members==null)
+        if(MembersMembers==null)
             return 0;
         else
-            return (int) Members.size();
+            return (int) MembersMembers.size();
     }
 
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
+
 
 }

@@ -1,5 +1,7 @@
 package com.example.housing.utils;
 
+import android.util.Log;
+
 /**
  * Created by rohitramaswamy on 19/04/17.
  */
@@ -33,6 +35,7 @@ public class Members
     }
 
     public String getIntercom_no() {
+        Log.v("hello",intercom_no);
         return intercom_no;
     }
 

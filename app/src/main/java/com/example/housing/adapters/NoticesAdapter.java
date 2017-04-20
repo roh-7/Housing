@@ -21,49 +21,49 @@ import static com.example.housing.R.id.notices_card;
 
 public class NoticesAdapter extends RecyclerView.Adapter<NoticesAdapter.NoticesViewHolder>
 {
-    List<Notices> NoticesList = new ArrayList<Notices>();
+    List<Notices> NoticesMembers = new ArrayList<Notices>();
 
-    public NoticesAdapter(List<Notices> NoticeList)
+    public NoticesAdapter(List<Notices> NoticesMembers)
     {
-        this.NoticesList = NoticeList;
+        this.NoticesMembers = NoticesMembers;
     }
 
     public static class NoticesViewHolder extends RecyclerView.ViewHolder
     {
         CardView cardView;
-        TextView noticesTitle;
-        TextView noticesSubtitle;
-        TextView noticesTime;
+        TextView NoticesTitle;
+        TextView NoticesSubtitle;
+        TextView NoticesTime;
 
         NoticesViewHolder(View itemView) {
             super(itemView);
             cardView = (CardView) itemView.findViewById(notices_card);
-            noticesTitle = (TextView) itemView.findViewById(R.id.notice_title);
-            noticesSubtitle = (TextView) itemView.findViewById(R.id.notice_subtitle);
-            noticesTime = (TextView) itemView.findViewById(R.id.notice_time);
+            NoticesTime = (TextView) itemView.findViewById(R.id.notice_time);
+            NoticesTitle = (TextView) itemView.findViewById(R.id.notice_title);
+            NoticesSubtitle = (TextView) itemView.findViewById(R.id.notice_subtitle);
         }
     }
 
     @Override
     public NoticesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_committee, parent, false);
-        NoticesViewHolder noticesViewHolder = new NoticesViewHolder(v);
-        return noticesViewHolder;
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_notices, parent, false);
+        NoticesViewHolder NoticesViewHolder = new NoticesViewHolder(v);
+        return NoticesViewHolder;
     }
 
     @Override
     public void onBindViewHolder(NoticesViewHolder holder, int position) {
-        holder.noticesTitle.setText(NoticesList.get(position).getTitle());
-        holder.noticesSubtitle.setText(NoticesList.get(position).getSubtitle());
-        holder.noticesTime.setText(NoticesList.get(position).getTimestamp());
+        holder.NoticesTime.setText(NoticesMembers.get(position).getTimestamp());
+        holder.NoticesSubtitle.setText(NoticesMembers.get(position).getSubtitle());
+        holder.NoticesTitle.setText(NoticesMembers.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        if(NoticesList==null)
+        if(NoticesMembers==null)
             return 0;
         else
-            return (int) NoticesList.size();
+            return (int) NoticesMembers.size();
     }
 
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {

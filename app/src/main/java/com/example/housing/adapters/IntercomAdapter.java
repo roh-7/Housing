@@ -20,51 +20,52 @@ import static com.example.housing.R.id.intercom_card;
  */
 
 public class IntercomAdapter extends RecyclerView.Adapter<IntercomAdapter.IntercomViewHolder>
-        {
-        List<Intercom> IntercomList=new ArrayList<Intercom>();
+{
+    List<Intercom> IntercomMembers = new ArrayList<Intercom>();
 
+    public IntercomAdapter(List<Intercom> IntercomMembers)
+    {
+        this.IntercomMembers = IntercomMembers;
+    }
 
-            public static class IntercomViewHolder extends RecyclerView.ViewHolder {
-                CardView cardView;
-                TextView intercomTitle;
-                TextView intercomNumber;
+    public static class IntercomViewHolder extends RecyclerView.ViewHolder
+    {
+        CardView cardView;
+        TextView IntercomTitle;
+        TextView IntercomNumber;
 
-                IntercomViewHolder(View itemView) {
-                    super(itemView);
-                    cardView = (CardView) itemView.findViewById(intercom_card);
-                    intercomNumber = (TextView) itemView.findViewById(R.id.intercom_number);
-                    intercomTitle = (TextView) itemView.findViewById(R.id.intercom_title);
-                }
-            }
-
-            public IntercomAdapter(List<Intercom> IntercomList)
-        {
-        this.IntercomList=IntercomList;
+        IntercomViewHolder(View itemView) {
+            super(itemView);
+            cardView = (CardView) itemView.findViewById(intercom_card);
+            IntercomTitle = (TextView) itemView.findViewById(R.id.intercom_title);
+            IntercomNumber = (TextView) itemView.findViewById(R.id.intercom_number);
         }
+    }
 
-@Override
-public IntercomViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.design_committee,parent,false);
-        IntercomViewHolder intercomViewHolder=new IntercomViewHolder(v);
-        return intercomViewHolder;
-        }
+    @Override
+    public IntercomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_intercom, parent, false);
+        IntercomViewHolder IntercomViewHolder = new IntercomViewHolder(v);
+        return IntercomViewHolder;
+    }
 
-@Override
-public void onBindViewHolder(IntercomViewHolder holder,int position){
-        holder.intercomTitle.setText(IntercomList.get(position).getName());
-        holder.intercomNumber.setText(IntercomList.get(position).getIntercom_no());
-        }
+    @Override
+    public void onBindViewHolder(IntercomViewHolder holder, int position) {
+        holder.IntercomTitle.setText(IntercomMembers.get(position).getName());
+        holder.IntercomNumber.setText(IntercomMembers.get(position).getIntercom_no());
+    }
 
-@Override
-public int getItemCount(){
-        if(IntercomList==null)
-        return 0;
+    @Override
+    public int getItemCount() {
+        if(IntercomMembers==null)
+            return 0;
         else
-        return(int)IntercomList.size();
-        }
+            return (int) IntercomMembers.size();
+    }
 
-            public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-                super.onAttachedToRecyclerView(recyclerView);
-            }
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
 
 }
