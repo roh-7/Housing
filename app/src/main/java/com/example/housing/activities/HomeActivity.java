@@ -34,6 +34,12 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // setting notices as the default fragment
+        NoticesFragment noticesFragment = new NoticesFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragment_container,noticesFragment,noticesFragment.getTag()).commit();
+
     }
 
     @Override

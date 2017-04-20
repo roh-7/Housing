@@ -12,6 +12,6 @@
         android:title="Intercom"/>
     <item
         android:id="@+id/notices"
-        android:title="notices"/>
+        android:title="Notices"/>
 
 </menu>
