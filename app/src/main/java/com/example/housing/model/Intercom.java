@@ -1,4 +1,4 @@
-package com.example.housing.utils;
+package com.example.housing.model;
 
 /**
  * Created by rohitramaswamy on 19/04/17.

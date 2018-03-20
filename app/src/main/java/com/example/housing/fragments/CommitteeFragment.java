@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.housing.R;
 import com.example.housing.adapters.CommitteeAdapter;
-import com.example.housing.utils.Committee;
+import com.example.housing.model.Committee;
 
 import java.util.ArrayList;
 import java.util.List;

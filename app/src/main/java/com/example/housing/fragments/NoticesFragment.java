@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.housing.R;
 import com.example.housing.adapters.NoticesAdapter;
-import com.example.housing.utils.Notices;
+import com.example.housing.model.Notices;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.housing.utils;
+package com.example.housing.model;
 
 import android.util.Log;
 

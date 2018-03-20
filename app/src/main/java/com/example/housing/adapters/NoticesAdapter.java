@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.housing.R;
-import com.example.housing.utils.Notices;
+import com.example.housing.model.Notices;
 
 import java.util.ArrayList;
 import java.util.List;

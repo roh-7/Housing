@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.housing.R;
-import com.example.housing.utils.Committee;
+import com.example.housing.model.Committee;
 
 import java.util.ArrayList;
 import java.util.List;

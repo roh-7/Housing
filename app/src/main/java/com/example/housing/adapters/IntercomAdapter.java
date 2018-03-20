@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.housing.R;
-import com.example.housing.utils.Intercom;
+import com.example.housing.model.Intercom;
 
 import java.util.ArrayList;
 import java.util.List;

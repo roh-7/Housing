@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.housing.R;
 import com.example.housing.adapters.MembersAdapter;
-import com.example.housing.utils.Members;
+import com.example.housing.model.Members;
 
 import java.util.ArrayList;
 import java.util.List;
