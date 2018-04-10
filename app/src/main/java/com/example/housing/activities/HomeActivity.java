@@ -45,6 +45,7 @@ public class HomeActivity extends AppCompatActivity
 		NoticesFragment noticesFragment = new NoticesFragment();
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		fragmentManager.beginTransaction().replace(R.id.fragment_container, noticesFragment, noticesFragment.getTag()).commit();
+		setTitle("Notices");
 
 		reference = FirebaseDatabase.getInstance().getReference();
 
@@ -77,24 +78,28 @@ public class HomeActivity extends AppCompatActivity
 			MembersFragment membersFragment = new MembersFragment();
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction().replace(R.id.fragment_container, membersFragment, membersFragment.getTag()).commit();
+			setTitle("Members");
 		}
 		else if (id == R.id.notices)
 		{
 			NoticesFragment noticesFragment = new NoticesFragment();
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction().replace(R.id.fragment_container, noticesFragment, noticesFragment.getTag()).commit();
+			setTitle("Notices");
 		}
 		else if (id == R.id.commitee)
 		{
 			CommitteeFragment committeeFragment = new CommitteeFragment();
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction().replace(R.id.fragment_container, committeeFragment, committeeFragment.getTag()).commit();
+			setTitle("Committe");
 		}
 		else if (id == R.id.intercom)
 		{
 			IntercomFragment intercomFragment = new IntercomFragment();
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			fragmentManager.beginTransaction().replace(R.id.fragment_container, intercomFragment, intercomFragment.getTag()).commit();
+			setTitle("Intercom");
 		}
 
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

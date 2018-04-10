@@ -1,9 +1,12 @@
 package com.example.housing.model;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 /**
  * Created by rohitramaswamy on 19/04/17.
  */
 
+@IgnoreExtraProperties
 public class Notices
 {
     String title;

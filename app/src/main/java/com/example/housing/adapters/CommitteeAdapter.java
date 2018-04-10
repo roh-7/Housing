@@ -21,54 +21,59 @@ import static com.example.housing.R.id.commitee_card;
 
 public class CommitteeAdapter extends RecyclerView.Adapter<CommitteeAdapter.CommitteeViewHolder>
 {
-    List<Committee> CommitteeMembers = new ArrayList<Committee>();
+	List<Committee> CommitteeMembers = new ArrayList<Committee>();
 
-    public CommitteeAdapter(List<Committee> CommitteeMembers)
-    {
-        this.CommitteeMembers = CommitteeMembers;
-    }
+	public CommitteeAdapter(List<Committee> CommitteeMembers)
+	{
+		this.CommitteeMembers = CommitteeMembers;
+	}
 
-    public static class CommitteeViewHolder extends RecyclerView.ViewHolder
-    {
-        CardView cardView;
-        TextView committeeName;
-        TextView committeePosition;
-        TextView committeeFlatNo;
+	public static class CommitteeViewHolder extends RecyclerView.ViewHolder
+	{
+		CardView cardView;
+		TextView committeeName;
+		TextView committeePosition;
+		TextView committeeFlatNo;
 
-        CommitteeViewHolder(View itemView) {
-            super(itemView);
-            cardView = (CardView) itemView.findViewById(commitee_card);
-            committeeName = (TextView) itemView.findViewById(R.id.committee_name);
-            committeePosition = (TextView) itemView.findViewById(R.id.committee_position);
-            committeeFlatNo = (TextView) itemView.findViewById(R.id.commitee_flat_no);
-        }
-    }
+		CommitteeViewHolder(View itemView)
+		{
+			super(itemView);
+			cardView = (CardView) itemView.findViewById(commitee_card);
+			committeeName = (TextView) itemView.findViewById(R.id.committee_name);
+			committeePosition = (TextView) itemView.findViewById(R.id.committee_position);
+			committeeFlatNo = (TextView) itemView.findViewById(R.id.commitee_flat_no);
+		}
+	}
 
-    @Override
-    public CommitteeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_committee, parent, false);
-        CommitteeViewHolder committeeViewHolder = new CommitteeViewHolder(v);
-        return committeeViewHolder;
-    }
+	@Override
+	public CommitteeViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+	{
+		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_committee, parent, false);
+		CommitteeViewHolder committeeViewHolder = new CommitteeViewHolder(v);
+		return committeeViewHolder;
+	}
 
-    @Override
-    public void onBindViewHolder(CommitteeViewHolder holder, int position) {
-        holder.committeeName.setText(CommitteeMembers.get(position).getName());
-        holder.committeePosition.setText(CommitteeMembers.get(position).getPosition());
-        holder.committeeFlatNo.setText(CommitteeMembers.get(position).getFlat_no());
-    }
+	@Override
+	public void onBindViewHolder(CommitteeViewHolder holder, int position)
+	{
+		holder.committeeName.setText(CommitteeMembers.get(position).getName());
+		holder.committeePosition.setText(CommitteeMembers.get(position).getPosition());
+		holder.committeeFlatNo.setText(CommitteeMembers.get(position).getFlat_no());
+	}
 
-    @Override
-    public int getItemCount() {
-        if(CommitteeMembers==null)
-            return 0;
-        else
-            return (int) CommitteeMembers.size();
-    }
+	@Override
+	public int getItemCount()
+	{
+		if (CommitteeMembers == null)
+		{ return 0; }
+		else
+		{ return (int) CommitteeMembers.size(); }
+	}
 
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-    }
+	public void onAttachedToRecyclerView(RecyclerView recyclerView)
+	{
+		super.onAttachedToRecyclerView(recyclerView);
+	}
 
 
 }

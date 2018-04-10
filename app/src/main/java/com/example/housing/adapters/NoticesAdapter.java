@@ -21,54 +21,59 @@ import static com.example.housing.R.id.notices_card;
 
 public class NoticesAdapter extends RecyclerView.Adapter<NoticesAdapter.NoticesViewHolder>
 {
-    List<Notices> NoticesMembers = new ArrayList<Notices>();
+	List<Notices> NoticesMembers = new ArrayList<Notices>();
 
-    public NoticesAdapter(List<Notices> NoticesMembers)
-    {
-        this.NoticesMembers = NoticesMembers;
-    }
+	public NoticesAdapter(List<Notices> NoticesMembers)
+	{
+		this.NoticesMembers = NoticesMembers;
+	}
 
-    public static class NoticesViewHolder extends RecyclerView.ViewHolder
-    {
-        CardView cardView;
-        TextView NoticesTitle;
-        TextView NoticesSubtitle;
-        TextView NoticesTime;
+	@Override
+	public NoticesViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+	{
+		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_notices, parent, false);
+		NoticesViewHolder NoticesViewHolder = new NoticesViewHolder(v);
+		return NoticesViewHolder;
+	}
 
-        NoticesViewHolder(View itemView) {
-            super(itemView);
-            cardView = (CardView) itemView.findViewById(notices_card);
-            NoticesTime = (TextView) itemView.findViewById(R.id.notice_time);
-            NoticesTitle = (TextView) itemView.findViewById(R.id.notice_title);
-            NoticesSubtitle = (TextView) itemView.findViewById(R.id.notice_subtitle);
-        }
-    }
+	@Override
+	public void onBindViewHolder(NoticesViewHolder holder, int position)
+	{
+		holder.NoticesTime.setText(NoticesMembers.get(position).getTimestamp());
+		holder.NoticesSubtitle.setText(NoticesMembers.get(position).getSubtitle());
+		holder.NoticesTitle.setText(NoticesMembers.get(position).getTitle());
+	}
 
-    @Override
-    public NoticesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.design_notices, parent, false);
-        NoticesViewHolder NoticesViewHolder = new NoticesViewHolder(v);
-        return NoticesViewHolder;
-    }
+	@Override
+	public int getItemCount()
+	{
+		if (NoticesMembers == null)
+		{ return 0; }
+		else
+		{ return (int) NoticesMembers.size(); }
+	}
 
-    @Override
-    public void onBindViewHolder(NoticesViewHolder holder, int position) {
-        holder.NoticesTime.setText(NoticesMembers.get(position).getTimestamp());
-        holder.NoticesSubtitle.setText(NoticesMembers.get(position).getSubtitle());
-        holder.NoticesTitle.setText(NoticesMembers.get(position).getTitle());
-    }
+	public void onAttachedToRecyclerView(RecyclerView recyclerView)
+	{
+		super.onAttachedToRecyclerView(recyclerView);
+	}
 
-    @Override
-    public int getItemCount() {
-        if(NoticesMembers==null)
-            return 0;
-        else
-            return (int) NoticesMembers.size();
-    }
+	public static class NoticesViewHolder extends RecyclerView.ViewHolder
+	{
+		CardView cardView;
+		TextView NoticesTitle;
+		TextView NoticesSubtitle;
+		TextView NoticesTime;
 
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-    }
+		NoticesViewHolder(View itemView)
+		{
+			super(itemView);
+			cardView = (CardView) itemView.findViewById(notices_card);
+			NoticesTime = (TextView) itemView.findViewById(R.id.notice_time);
+			NoticesTitle = (TextView) itemView.findViewById(R.id.notice_title);
+			NoticesSubtitle = (TextView) itemView.findViewById(R.id.notice_subtitle);
+		}
+	}
 
 
 }

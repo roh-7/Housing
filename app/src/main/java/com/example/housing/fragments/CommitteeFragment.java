@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import com.example.housing.R;
 import com.example.housing.adapters.CommitteeAdapter;
 import com.example.housing.model.Committee;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,23 +22,29 @@ import java.util.List;
  * Created by rohitramaswamy on 19/04/17.
  */
 
-public class CommitteeFragment extends Fragment {
+public class CommitteeFragment extends Fragment
+{
 
-    private List<Committee> CommitteeMembers = new ArrayList<Committee>();
-    RecyclerView recyclerView;
-    private static final String LOG_TAG = "CommitteFragment";
+	private static final String LOG_TAG = "CommitteFragment";
+	RecyclerView recyclerView;
+	private List<Committee> CommitteeMembers = new ArrayList<Committee>();
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
-        View view = inflater.inflate(R.layout.fragment_committee,container,false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.commitee_recycler_view);
-        CommitteeMembers.add(new Committee("Rohit Ramaswamy","Secretary","A-101"));
-        CommitteeMembers.add(new Committee("Aditya Nair","Treasurer","D-504"));
-        CommitteeMembers.add(new Committee("Aditya Kulkarni","Member","C-803"));
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new CommitteeAdapter(CommitteeMembers));
-        return view;
-    }
+	private DatabaseReference ref;
+
+	@Nullable
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
+		View view = inflater.inflate(R.layout.fragment_committee, container, false);
+		recyclerView = (RecyclerView) view.findViewById(R.id.commitee_recycler_view);
+
+		ref = FirebaseDatabase.getInstance().getReference("/committee");
+
+		CommitteeMembers.add(new Committee("Rohit Ramaswamy", "Secretary", "A-101"));
+		CommitteeMembers.add(new Committee("Aditya Nair", "Treasurer", "D-504"));
+		CommitteeMembers.add(new Committee("Aditya Kulkarni", "Member", "C-803"));
+		recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+		recyclerView.setAdapter(new CommitteeAdapter(CommitteeMembers));
+		return view;
+	}
 }
